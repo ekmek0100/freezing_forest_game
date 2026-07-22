@@ -1,0 +1,20 @@
+For Linux;
+1. Dependencies:
+   git clone https://github.com/ekmek0100/freezing_forest_game.git
+   cd freezing_forest_game
+
+2. compile:
+   g++ freezing_forest.cpp -o freezing_forest
+
+3. run:
+   ./freezing_forest
+For MacOS; (Important note:this game not tested in MacOS if there are bugs or errors; dont worry i solve bugs future in my friend's macbook)
+ 1. Dependencies:
+open terminal and type this and press enter: xcode-select --install
+2. compile:
+   g++ freezing_forest.cpp -o freezing_forest
+
+3. run:
+   ./freezing_forest
+For Windows 
+ Not ready yet sorry guys :(
