@@ -172,7 +172,7 @@ int main() {
     std::cout << "1. Go to The river to found fishes and make your shelter stronger";
     std::cout << "2. Go to your shelter and play with cat" << std::endl;
     std::cin >> SeventhChoice;
-    if (SeventhChoice == '1');{
+    if (SeventhChoice == '1'){
         std::cout << "You are found a few fises and eated with your cat";
         std::cout << "The cat really likes eat fishes";
         std::cout << "You are survived!";}
