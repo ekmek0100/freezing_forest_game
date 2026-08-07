@@ -1,1 +1,102 @@
+// Welcome to the Freezing Forest Code there are so many codes you can exit this window
+// this game is a text-based choice adventure game
+//for developers: this game coded with C++ language standard version C++17
+//functions: starterChoice to start or exit the game. lvl1, lvl2, lvl3, lvl4 ,lvl5 ,lvl6 to choose what to do in the forest. 
+//© 2026 Freezing Forest 
 
+
+#include stdafx.h
+#include <iostream>
+#include <cstdlib>
+int main() {
+    std::cout << "© 2026 Freezing Forest (this game uses Polyform Noncommerial 1.0 liscense!)" << std::endl;
+    std::cout << "Welcome to the Freezing Forest!" << std::endl;
+    std::cout << "press 1 to enter the forest, or 2 to exit." << std::endl;
+    std::cout << "please dont input 9+ numbers (only 1 character supported)" << std::endl;
+    system("PAUSE");
+    
+    starterchoice:
+    char StartChoice;
+    std::cin >> StartChoice;
+    if (StartChoice == '1') {
+        std::cout << "You have entered the forest. Be careful!" << std::endl;
+    } else if (StartChoice == '2') {
+        std::cout << "You have exited the forest. Goodbye!" << std::endl;
+        exit(0);
+    } else {
+        std::cout << "Invalid choice." << std::endl;
+        goto starterchoice;
+    }
+    
+
+    lvl1:
+    char lvl1Choice;
+    std::cout << "You are now in the forest. What would you like to do?" << std::endl;
+    std::cout << "1. Explore the forest" << std::endl;
+    std::cout << "2. Light a campfire" << std::endl;
+    std::cout << "3. Eat a berry" << std::endl;
+    std::cin >> lvl1Choice;
+    if (lvl1Choice == '3') {
+        std::cout << "Sticky got sick and poisoned." << std::endl;
+        std::cout << "You have died." << std::endl;
+        std::cout << "Game Over." << std::endl;
+        exit(0);
+    }
+    else if (lvl1Choice == '2') {
+        std::cout << "You have lit a campfire. You are safe for now." << std::endl;
+    } else if (lvl1Choice == '1') {
+        std::cout << "You are exploring the forest." << std::endl;
+        std::cout << "But you find nothing and return to your camp." << std::endl;
+        std::cout << "As you were heading back to the campfire, you stubbed your toe on a stone and fell, breaking your arm and then a wolf appeared." << std::endl;
+        std::cout << "You have been attacked by the wolf." << std::endl;
+        std::cout << "You have died." << std::endl;
+        std::cout << "Game Over." << std::endl;
+        exit(0);
+    } else {
+        std::cout << "Invalid choice." << std::endl;
+        goto lvl1;
+    }
+
+    lvl2:
+    char SecondChoice;
+    std::cout << "You are survived on first level" << std::endl;
+    std::cout << "What would you like to do next?" << std::endl;
+    std::cout << "1. Continue exploring" << std::endl;
+    std::cout << "2. Build a shelter" << std::endl;
+    std::cin >> SecondChoice;
+    if (SecondChoice == '1') {
+        std::cout << "You continue exploring the forest but bear attacks you and bear kills you." << std::endl;
+        std::cout << "Game Over." << std::endl;
+        exit(0);
+    } else if (SecondChoice == '2') {
+        std::cout << "You have built a shelter. you are safer than before." << std::endl;
+        std::cout << "You have survived!." << std::endl;
+    } else {
+        std::cout << "Invalid choice." << std::endl;
+        goto lvl2;
+    }
+
+
+    lvl3:
+    char ThirdChoice;
+    std::cout << "A Wolf appears!" << std::endl;
+    std::cout << "What would you like to do?" << std::endl;
+    std::cout << "1. Use a knife" << std::endl;
+    std::cout << "2. Run away" << std::endl;
+    std::cin >> ThirdChoice;
+    if (ThirdChoice == '1') {
+        std::cout << "You have used a knife and killed the wolf." << std::endl;
+        std::cout << "You have survived!." << std::endl;
+    } else if (ThirdChoice == '2') {
+        std::cout << "You tried to run away but the wolf caught you and killed you." << std::endl;
+        std::cout << "Game Over." << std::endl;
+        exit(0);
+    } else {
+        std::cout << "Invalid choice." << std::endl;
+        goto lvl3;
+    }
+
+
+    lvl4:
+    char FourthChoice;
+    std::cout << "You have survived the wolf attack." << std::endl;
