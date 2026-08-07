@@ -2,13 +2,14 @@
 // this game is a text-based choice adventure game
 //for developers: this game coded with C++ language standard version C++17
 //functions: starterChoice to start or exit the game. lvl1, lvl2, lvl3, lvl4 ,lvl5 ,lvl6 to choose what to do in the forest. 
-
+//© 2026 Freezing Forest 
 
 
 
 #include <iostream>
 #include <cstdlib>
 int main() {
+    std::cout << "© 2026 Freezing Forest (this game uses Polyform Noncommerial 1.0 liscense!)" << std::endl;
     std::cout << "Welcome to the Freezing Forest!" << std::endl;
     std::cout << "press 1 to enter the forest, or 2 to exit." << std::endl;
     std::cout << "please dont input 9+ numbers (only 1 character supported)" << std::endl;
