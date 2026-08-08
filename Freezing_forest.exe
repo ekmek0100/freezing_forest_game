@@ -140,7 +140,7 @@ int main() {
     } else {
         std::cout << "Invalid choice." << std::endl;
         goto lvl5;
-
+    }
 
     lvl6:
     char SixthChoice;
@@ -161,7 +161,7 @@ int main() {
     } else {
         std::cout << "Invalid choice." << std::endl;
         goto lvl6;
-    
+    }
 
 
     lvl7:
@@ -169,16 +169,16 @@ int main() {
     std::cout << "The forest is really frezzing than first day" << std::endl;
     std::cout << "Your campfire is unlit" << std::endl;
     std::cout << "Previous night cat entered your shelter and you are tamed the cat!" << std::endl;
-    std::cout << "What would do like to do next?";
-    std::cout << "1. Go to The river to found fishes and make your shelter stronger";
+    std::cout << "What would do like to do next?"<< std::endl;
+    std::cout << "1. Go to The river to found fishes and make your shelter stronger"<< std::endl;
     std::cout << "2. Go to your shelter and play with cat" << std::endl;
     std::cin >> SeventhChoice;
     if (SeventhChoice == '1'){
-        std::cout << "You are found a few fises and eated with your cat";
-        std::cout << "The cat really likes eat fishes";
-        std::cout << "You are survived!";}
-    if (SeventhChoice == '2'){
-        std::cout << "Tonight, the cat and you froze to death.";
+        std::cout << "You are found a few fises and eated with your cat"<< std::endl;
+        std::cout << "The cat really likes eat fishes"<< std::endl;
+        std::cout << "You are survived!"<< std::endl;}
+    else if (SeventhChoice == '2'){
+        std::cout << "Tonight, the cat and you froze to death."<< std::endl;
         std::cout << "Game over" << std::endl;
         exit(0);}
 
@@ -187,8 +187,12 @@ int main() {
         std::cout << "Invalid choice." << std::endl;
         goto lvl7;
 }
+
+    std::cout << "You have survived the Freezing Forest!" << std::endl;
+    std::cout << "Just for now..." << std::endl;
+    std::cout << "Thank you for playing!" << std::endl;
+    std::cout << "You have reached the end of the game!" << std::endl;
+    std::cout << "New levels coming soon!" << std::endl;
+
 }
 
-
-}
-}
