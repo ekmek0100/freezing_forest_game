@@ -17,4 +17,5 @@ open terminal and type this and press enter: xcode-select --install
 3. run:
    ./freezing_forest
 For Windows 
- Not ready yet sorry guys :(
+ 1.Open file
+ 2.And give permission to Freezing_Forest.exe
