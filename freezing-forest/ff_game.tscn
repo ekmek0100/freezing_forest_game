@@ -1,0 +1,84 @@
+[gd_scene format=3 uid="uid://352xqdlfh2qi"]
+
+[ext_resource type="Texture2D" uid="uid://ceefff1sk02ti" path="res://ff_game_main_sticky.png" id="1_gmr8q"]
+[ext_resource type="Script" uid="uid://bvb0t0r7l6sex" path="res://animated_sprite_2d.gd" id="2_cf7gq"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tj75n"]
+atlas = ExtResource("1_gmr8q")
+region = Rect2(0, 64, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xj2is"]
+atlas = ExtResource("1_gmr8q")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dqxbp"]
+atlas = ExtResource("1_gmr8q")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a5cin"]
+atlas = ExtResource("1_gmr8q")
+region = Rect2(64, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uoytw"]
+atlas = ExtResource("1_gmr8q")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k7uf1"]
+atlas = ExtResource("1_gmr8q")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cfd4c"]
+atlas = ExtResource("1_gmr8q")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_nngf1"]
+resource_local_to_scene = true
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tj75n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xj2is")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dqxbp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a5cin")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uoytw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k7uf1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cfd4c")
+}],
+"loop": 1,
+"name": &"new_animation",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nngf1"]
+size = Vector2(188, 175)
+
+[node name="FF_game" type="Node2D" unique_id=888231809]
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=1257502242]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D" unique_id=1094604779]
+position = Vector2(69.5, 63)
+scale = Vector2(5.34375, 4.9375)
+sprite_frames = SubResource("SpriteFrames_nngf1")
+animation = &"new_animation"
+frame = 3
+frame_progress = 0.027794996
+script = ExtResource("2_cf7gq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" unique_id=785440428]
+position = Vector2(86, 74)
+shape = SubResource("RectangleShape2D_nngf1")
+
+[node name="Node2D" type="Node2D" parent="." unique_id=1793960596]
