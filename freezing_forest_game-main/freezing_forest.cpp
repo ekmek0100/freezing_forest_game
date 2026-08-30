@@ -1,8 +1,8 @@
 // Welcome to the Freezing Forest Code there are so many codes you can exit this window
 // this game is a text-based choice adventure game
 //for developers: this game coded with C++ language standard version C++17
-//functions: starterChoice to start or exit the game. lvl1, lvl2, lvl3, lvl4 ,lvl5 ,lvl6 to choose what to do in the forest. 
-//© 2026 Freezing Forest 
+//functions: starterChoice to start or exit the game. lvl1, lvl2, lvl3, lvl4 ,lvl5 ,lvl6 etc. to choose what to do in the forest. 
+//© 2026 Freezing Forest
 
 
 
@@ -173,26 +173,45 @@ int main() {
     std::cout << "1. Go to The river to found fishes and make your shelter stronger"<< std::endl;
     std::cout << "2. Go to your shelter and play with cat" << std::endl;
     std::cin >> SeventhChoice;
-    if (SeventhChoice == '1'){
+    if (SeventhChoice == '1')
+    {
         std::cout << "You are found a few fises and eated with your cat"<< std::endl;
         std::cout << "The cat really likes eat fishes"<< std::endl;
         std::cout << "You are survived!"<< std::endl;}
-    else if (SeventhChoice == '2'){
+    else if (SeventhChoice == '2')
+    {
         std::cout << "Tonight, the cat and you froze to death."<< std::endl;
         std::cout << "Game over" << std::endl;
-        exit(0);}
+        exit(0);
+    }
 
 
     else {
         std::cout << "Invalid choice." << std::endl;
         goto lvl7;
+    }    
+    lvl8:
+    char eighthchoice;
+    std::cout << "Oh no! Your cat freezed previous night!" << std::endl;
+    std::cout << "And you need a new clothes." << std::endl;
+    std::cout << "What would do like to do next?" << std::endl;
+    std::cout << "[1] Be sad and dont do anything" << std::endl;
+    std::cout << "[2] Go to the forest and find a deer to eat and make clothes" << std::endl;
+    std::cin >> eighthchoice;
+    if (eighthchoice == '1'){
+        std::cout << "You are sad and dont do anything"<< std::endl;
+        std::cout << "You freezed to death"<< std::endl;
+        std::cout << "Are you stupid bro?"<< std::endl;
+        std::cout << "Game over" << std::endl;
+        exit(0);
+    }
+    else if (eighthchoice == '2'){
+        std::cout << "You are found a deer and made clothes from it"<< std::endl;
+        std::cout << "You are survived!"<< std::endl;
+        std::cout << "And you are warm for just now." << std::endl;
+    }
+    else {
+        std::cout << "Invalid choice." << std::endl;
+        goto lvl8;
+    }
 }
-
-    std::cout << "You have survived the Freezing Forest!" << std::endl;
-    std::cout << "Just for now..." << std::endl;
-    std::cout << "Thank you for playing!" << std::endl;
-    std::cout << "You have reached the end of the game!" << std::endl;
-    std::cout << "New levels coming soon!" << std::endl;
-
-}
-
