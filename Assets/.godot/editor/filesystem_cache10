@@ -1,0 +1,23 @@
+3e2cc9f74922c2592e3236b3f5b5179c
+::res://::1789023182
+animated_sprite_2d.gd::GDScript::3864003973564496847::1788314274::0::1::::<>RefCounted<><>0<>0<><>::
+animations.gd::GDScript::6526019526427105134::1788781735::0::1::::<>AnimatedSprite2D<><>0<>0<><>::
+area_2d.gd::GDScript::6076637658357743094::1788960803::0::1::::<>Area2D<><>0<>0<><>::
+blocks_place2.gd::GDScript::381214909711525055::1788878199::0::1::::<>Node2D<><>0<>0<><>::
+blocks_remain_ui.gd::GDScript::2507067972802572926::1788966157::0::1::::<>Label<><>0<>0<><>::
+block_place.gd::GDScript::1106853879639136815::1788961125::0::1::::<>Node2D<><>0<>0<><>::
+export_presets.cfg::TextFile::-1::1788881592::0::1::::<><><>0<>0<><>::
+ff_game.tscn::PackedScene::2028900232066000956::1788966157::0::1::::<><><>0<>0<><>::uid://ceefff1sk02ti::::res://ff_game_main_sticky.png<>uid://bstqsp6inve2c::::res://sticky.gd<>uid://cy8it85eqapyc::::res://animations.gd<>uid://p1fysjcxkeod::::res://block_place.gd<>uid://cbksyb163l03v::::res://ff_game_font.ttf<>uid://cfik5sx1jtdf8::::res://ff_game_main_sloomba(he_s so cute _).png<>uid://f5hga1nb77n::::res://ff_main_cloud.png<>uid://csttlmuismfvy::::res://area_2d.gd<>uid://c70r0066jsfx4::::res://ff_game_ui_remain_blocks.png<>uid://bbypbp756dcfe::::res://blocks_remain_ui.gd
+ff_game_font.ttf::FontFile::4864809847622988841::1785656148::1788959624::1::::<><><>0<>0<>fc6ac342ab894f5446d3a738670e5eb7<>res://.godot/imported/ff_game_font.ttf-bde35fb24fcd24fe1b09dc650ad23729.fontdata::
+ff_game_main_sloomba(he_s so cute _).png::CompressedTexture2D::5140962333498556415::1788334940::1788959624::1::::<><><>0<>0<>10664e1b1c6fddb6c37e2bee153f6b04<>res://.godot/imported/ff_game_main_sloomba(he_s so cute _).png-17aa6c59a5edd6cbb37563ea23a159a4.ctex::
+ff_game_main_soil_with_blood_and_snow.png::CompressedTexture2D::533525348186524687::1788320756::1788959624::1::::<><><>0<>0<>cd12e4f70e702389e2ede48d6452b75b<>res://.godot/imported/ff_game_main_soil_with_blood_and_snow.png-c6381bb84d06b4484f9fd58b770ce5db.ctex::
+ff_game_main_soil_with_snow.png::CompressedTexture2D::7864004718263902697::1788320752::1788959624::1::::<><><>0<>0<>c8ff0e5974335714efe985afbb927aca<>res://.godot/imported/ff_game_main_soil_with_snow.png-bdbaaf4f4bb8d2493a326a3f5890486d.ctex::
+ff_game_main_sticky.png::CompressedTexture2D::5062167070501808546::1788254574::1788959624::1::::<><><>0<>0<>49adc42c42470743847f016d8ed23100<>res://.godot/imported/ff_game_main_sticky.png-7026a3967a0014efca3b896e0e0a19b4.ctex::
+ff_game_ui_remain_blocks.png::CompressedTexture2D::7071572003773314815::1788962541::1788962816::1::::<><><>0<>0<>c63958dcea2dfca6efcfad2edec921bc<>res://.godot/imported/ff_game_ui_remain_blocks.png-439601397dd71838b594b4c94587fe51.ctex::
+ff_main_background.png::CompressedTexture2D::49830478763418924::1787829734::1788959624::1::::<><><>0<>0<>6a4f0800ff8c60ded933cfe36798a714<>res://.godot/imported/ff_main_background.png-b47df6f68803b31b4be59db564d72979.ctex::
+ff_main_cloud.png::CompressedTexture2D::12156215449498725::1788779610::1788959624::1::::<><><>0<>0<>858a1301e7689f76b6710d556fb753a8<>res://.godot/imported/ff_main_cloud.png-aa73b1de9f376428089760a822d3db0b.ctex::
+Freezing Forest.apple-touch-icon.png::CompressedTexture2D::3325495331284177555::1788881179::1788959624::1::::<><><>0<>0<>1f755633465e1f691f1754b156c6189b<>res://.godot/imported/Freezing Forest.apple-touch-icon.png-557d197e0431a7f1cd0e9b693351339c.ctex::
+Freezing Forest.icon.png::CompressedTexture2D::4394770867724734949::1788881179::1788959624::1::::<><><>0<>0<>69d30c04302e1a8e0fd86897f5386a2a<>res://.godot/imported/Freezing Forest.icon.png-61ff4b2d914099194b31ac8adaf89638.ctex::
+Freezing Forest.png::CompressedTexture2D::2387108542137955869::1788881179::1788959624::1::::<><><>0<>0<>3b103b29acda3b9411ab0d1badead87f<>res://.godot/imported/Freezing Forest.png-3a7ef07c74ff06792b9e42fd78eb8e29.ctex::
+icon.svg::CompressedTexture2D::1709049312721240917::1787829734::1788959624::1::::<><><>0<>0<>1fff6a2ffc472c6cdf18ebd8d3ee7998<>res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex::
+sticky.gd::GDScript::3690047498800247008::1788874300::0::1::::<>CharacterBody2D<><>0<>0<><>::
