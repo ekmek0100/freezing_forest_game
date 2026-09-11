@@ -6,7 +6,7 @@ v0.2 RELEASE DEVLOG (release note) (not another v0.2)
 
 adding visuality,adding sloomba(he is so cute!) adding lore! changed game engine (C++ raw code ----> Godot 4.7 game engine)
 
-# Hey music guys!
+# Hey Voluntarily music guys!
 i need an team mate
 i cant make musics for Freezing Forest Please help me!
 all of this projects code is source avaible 
