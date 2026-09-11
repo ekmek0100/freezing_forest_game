@@ -9,3 +9,5 @@ adding visuality,adding sloomba(he is so cute!) adding lore! changed game engine
 # Hey music guys!
 i need an team mate
 i cant make musics for Freezing Forest Please help me!
+all of this projects code is source avaible 
+
