@@ -10,6 +10,18 @@
 [ext_resource type="Script" uid="uid://csttlmuismfvy" path="res://area_2d.gd" id="8_k7uf1"]
 [ext_resource type="Texture2D" uid="uid://c70r0066jsfx4" path="res://ff_game_ui_remain_blocks.png" id="9_wjehf"]
 [ext_resource type="Script" uid="uid://bbypbp756dcfe" path="res://blocks_remain_ui.gd" id="10_jdkrg"]
+[ext_resource type="Script" uid="uid://dqqmx75pevtsg" path="res://global_variables.gd" id="11_jdkrg"]
+[ext_resource type="Script" uid="uid://fgra41uw0p5h" path="res://label_2.gd" id="11_umwjq"]
+[ext_resource type="Texture2D" uid="uid://6fu5a6yc6vrl" path="res://ff_day_counter.png" id="12_eik0o"]
+[ext_resource type="Script" uid="uid://bwgsrpdndne22" path="res://ui_timer_days.gd" id="13_pc3ck"]
+[ext_resource type="Script" uid="uid://v8rc6edhq5a5" path="res://adv_timer_hours.gd" id="14_8ha4c"]
+[ext_resource type="Script" uid="uid://dsluxwrentb8y" path="res://adv_timer_mins.gd" id="15_8ha4c"]
+[ext_resource type="Texture2D" uid="uid://cnd7hbrearcb7" path="res://ff_main_health_bar.png" id="16_8ha4c"]
+[ext_resource type="Script" uid="uid://d0qvf68flt4fq" path="res://ui_health_info.gd" id="17_75cho"]
+[ext_resource type="AudioStream" uid="uid://bucol4g13pch5" path="res://ff_music_sorry_i_used_ai.mp3" id="19_g8m8l"]
+[ext_resource type="AudioStream" uid="uid://bxdtiktn6yasd" path="res://ff_sounds_jump.wav" id="20_em5vk"]
+[ext_resource type="Script" uid="uid://4r7o06glhuq5" path="res://audio_service.gd" id="20_ivbv5"]
+[ext_resource type="AudioStream" uid="uid://bmo8txuw3cxbd" path="res://ff_sounds_hurt.wav" id="21_ivbv5"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_k7uf1"]
 atlas = ExtResource("1_gmr8q")
@@ -107,13 +119,43 @@ size = Vector2(245632, 7892)
 
 [sub_resource type="Theme" id="Theme_xnwbw"]
 
-[sub_resource type="LabelSettings" id="LabelSettings_tkla5"]
-font = ExtResource("5_dqxbp")
-font_color = Color(0, 0, 0, 1)
-
 [sub_resource type="LabelSettings" id="LabelSettings_xnwbw"]
 font = ExtResource("5_dqxbp")
 font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_man7i"]
+font = ExtResource("5_dqxbp")
+font_size = 32
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_75cho"]
+font = ExtResource("5_dqxbp")
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_8ha4c"]
+font = ExtResource("5_dqxbp")
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_5xfyw"]
+font = ExtResource("5_dqxbp")
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_tkla5"]
+font = ExtResource("5_dqxbp")
+font_size = 32
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_umwjq"]
+font = ExtResource("5_dqxbp")
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_7x3rr"]
+font = ExtResource("5_dqxbp")
+font_size = 24
+
+[sub_resource type="LabelSettings" id="LabelSettings_o34q6"]
+font = ExtResource("5_dqxbp")
+font_size = 24
 
 [node name="FF_game" type="Node2D" unique_id=888231809]
 metadata/_edit_vertical_guides_ = [-454.0]
@@ -130,7 +172,7 @@ frame_progress = 0.26763675
 script = ExtResource("4_dqxbp")
 
 [node name="hitbox" type="CollisionShape2D" parent="sticky" unique_id=785440428]
-position = Vector2(121, 67.25)
+position = Vector2(120, 73)
 shape = SubResource("RectangleShape2D_nngf1")
 
 [node name="camera(follows sticky)" type="Camera2D" parent="sticky" unique_id=293725474]
@@ -352,7 +394,13 @@ script = ExtResource("8_k7uf1")
 position = Vector2(9920, 5898)
 shape = SubResource("RectangleShape2D_xnwbw")
 
+[node name="Audio_hurt2" type="AudioStreamPlayer" parent="dying area" unique_id=1247454474]
+stream = ExtResource("21_ivbv5")
+
 [node name="texts" type="Node2D" parent="." unique_id=502031065]
+position = Vector2(1, 1)
+rotation = 0.017453292
+skew = 0.017453292
 
 [node name="text2" type="TextEdit" parent="texts" unique_id=1877240515]
 offset_left = -132.0
@@ -367,22 +415,93 @@ This text box interactive!"
 metadata/_edit_use_anchors_ = true
 
 [node name="text" type="TextEdit" parent="texts" unique_id=2026787404]
-offset_left = 172.0
-offset_top = -104.0
-offset_right = 282.0
-offset_bottom = -36.0
+anchors_preset = -1
+offset_left = 207.0
+offset_top = -62.0
+offset_right = 317.0
+offset_bottom = 6.0
 theme = SubResource("Theme_xnwbw")
 theme_override_fonts/font = ExtResource("5_dqxbp")
 text = "Welcome to 
 Freezing Forest!
-(v0.2 Alpha)"
+(v0.2 Alpha Dev 1.1)"
+scroll_smooth = true
 metadata/_edit_use_anchors_ = true
 
-[node name="ui elements" type="Node2D" parent="." unique_id=510130261]
+[node name="all inferances" type="Node2D" parent="." unique_id=293827888]
 
-[node name="ui pin helper" type="CanvasLayer" parent="ui elements" unique_id=1443550592]
+[node name="ui_timer" type="Node2D" parent="all inferances" unique_id=583251297]
 
-[node name="ui_blocks_remain" type="Panel" parent="ui elements/ui pin helper" unique_id=2111490503]
+[node name="ui_timer_pinner" type="CanvasLayer" parent="all inferances/ui_timer" unique_id=655045274]
+
+[node name="ui_panel_timer" type="Panel" parent="all inferances/ui_timer/ui_timer_pinner" unique_id=1116002108]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -155.0
+offset_right = 162.0
+grow_vertical = 0
+
+[node name="ui_theme_timer" type="TextureRect" parent="all inferances/ui_timer/ui_timer_pinner/ui_panel_timer" unique_id=1954529712]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 4.0
+offset_right = 156.0
+offset_bottom = 151.0
+texture = ExtResource("12_eik0o")
+
+[node name="info1" type="Label" parent="all inferances/ui_timer/ui_timer_pinner/ui_panel_timer/ui_theme_timer" unique_id=1349131865]
+layout_mode = 0
+offset_left = 40.0
+offset_top = -2.0
+offset_right = 117.0
+offset_bottom = 21.0
+text = "Advenced timer"
+label_settings = SubResource("LabelSettings_xnwbw")
+
+[node name="day_timer" type="Label" parent="all inferances/ui_timer/ui_timer_pinner/ui_panel_timer/ui_theme_timer" unique_id=2080835972]
+layout_mode = 0
+offset_left = 79.0
+offset_top = 75.0
+offset_right = 132.0
+offset_bottom = 111.0
+label_settings = SubResource("LabelSettings_man7i")
+script = ExtResource("13_pc3ck")
+
+[node name="adv_timer_mins" type="Label" parent="all inferances/ui_timer/ui_timer_pinner/ui_panel_timer/ui_theme_timer" unique_id=1912559556]
+layout_mode = 0
+offset_left = 62.0
+offset_top = 29.0
+offset_right = 75.0
+offset_bottom = 43.0
+label_settings = SubResource("LabelSettings_75cho")
+script = ExtResource("15_8ha4c")
+
+[node name="adv_timer_hours" type="Label" parent="all inferances/ui_timer/ui_timer_pinner/ui_panel_timer/ui_theme_timer" unique_id=1318750931]
+layout_mode = 0
+offset_left = 45.0
+offset_top = 29.0
+offset_right = 57.0
+offset_bottom = 43.0
+label_settings = SubResource("LabelSettings_8ha4c")
+script = ExtResource("14_8ha4c")
+
+[node name="info2" type="Label" parent="all inferances/ui_timer/ui_timer_pinner/ui_panel_timer/ui_theme_timer" unique_id=1557625250]
+layout_mode = 0
+offset_left = 48.0
+offset_top = 12.0
+offset_right = 91.0
+offset_bottom = 35.0
+text = "H  M		 "
+label_settings = SubResource("LabelSettings_5xfyw")
+
+[node name="ui_remain_blocks" type="Node2D" parent="all inferances" unique_id=510130261]
+
+[node name="ui_blocks_remain_print" type="Node2D" parent="all inferances/ui_remain_blocks" unique_id=308888579]
+
+[node name="ui_blocks_pinner" type="CanvasLayer" parent="all inferances/ui_remain_blocks/ui_blocks_remain_print" unique_id=1443550592]
+
+[node name="ui_blocks_remain" type="Panel" parent="all inferances/ui_remain_blocks/ui_blocks_remain_print/ui_blocks_pinner" unique_id=2111490503]
 anchors_preset = 3
 anchor_left = 1.0
 anchor_top = 1.0
@@ -393,7 +512,7 @@ offset_top = -140.0
 grow_horizontal = 0
 grow_vertical = 0
 
-[node name="image_ui" type="TextureRect" parent="ui elements/ui pin helper/ui_blocks_remain" unique_id=1579355717]
+[node name="image_ui" type="TextureRect" parent="all inferances/ui_remain_blocks/ui_blocks_remain_print/ui_blocks_pinner/ui_blocks_remain" unique_id=1579355717]
 layout_mode = 0
 offset_left = -1.0
 offset_top = 1.0
@@ -401,20 +520,72 @@ offset_right = 136.0
 offset_bottom = 137.0
 texture = ExtResource("9_wjehf")
 
-[node name="Label" type="Label" parent="ui elements/ui pin helper/ui_blocks_remain/image_ui" unique_id=1965004795]
+[node name="remain_blocks" type="Label" parent="all inferances/ui_remain_blocks/ui_blocks_remain_print/ui_blocks_pinner/ui_blocks_remain/image_ui" unique_id=1965004795]
 layout_mode = 0
-offset_left = 5.0
-offset_top = 80.0
-offset_right = 39.0
-offset_bottom = 103.0
+offset_left = 12.0
+offset_top = 73.0
+offset_right = 62.0
+offset_bottom = 120.0
 label_settings = SubResource("LabelSettings_tkla5")
 script = ExtResource("10_jdkrg")
 
-[node name="Label2" type="Label" parent="ui elements/ui pin helper/ui_blocks_remain/image_ui" unique_id=1279369785]
+[node name="infos" type="Label" parent="all inferances/ui_remain_blocks/ui_blocks_remain_print/ui_blocks_pinner/ui_blocks_remain/image_ui" unique_id=1279369785]
 layout_mode = 0
-offset_left = 23.0
-offset_top = 32.0
-offset_right = 135.0
-offset_bottom = 64.0
-text = "Blocks Remain:"
-label_settings = SubResource("LabelSettings_xnwbw")
+offset_left = 12.0
+offset_top = 24.0
+offset_right = 108.0
+offset_bottom = 74.0
+label_settings = SubResource("LabelSettings_umwjq")
+justification_flags = 131
+script = ExtResource("11_umwjq")
+
+[node name="ui_health" type="Node2D" parent="all inferances" unique_id=366717655]
+
+[node name="ui_pinner_health" type="CanvasLayer" parent="all inferances/ui_health" unique_id=2098671589]
+
+[node name="ui_health_panel" type="Panel" parent="all inferances/ui_health/ui_pinner_health" unique_id=939585947]
+offset_left = 483.0
+offset_top = 613.0
+offset_right = 649.0
+offset_bottom = 647.0
+
+[node name="ui_therem_health" type="TextureRect" parent="all inferances/ui_health/ui_pinner_health/ui_health_panel" unique_id=891738749]
+layout_mode = 0
+offset_left = 7.0
+offset_top = -49.0
+offset_right = 161.0
+offset_bottom = 82.0
+texture = ExtResource("16_8ha4c")
+
+[node name="ui_health_info" type="Label" parent="all inferances/ui_health/ui_pinner_health/ui_health_panel/ui_therem_health" unique_id=1931700778]
+layout_mode = 0
+offset_left = 33.0
+offset_top = 56.0
+offset_right = 73.0
+offset_bottom = 79.0
+label_settings = SubResource("LabelSettings_7x3rr")
+script = ExtResource("17_75cho")
+
+[node name="info" type="Label" parent="all inferances/ui_health/ui_pinner_health/ui_health_panel/ui_therem_health" unique_id=1519618547]
+layout_mode = 0
+offset_left = 89.0
+offset_top = 57.0
+offset_right = 129.0
+offset_bottom = 85.0
+text = "100"
+label_settings = SubResource("LabelSettings_o34q6")
+
+[node name="global_variables" type="Node2D" parent="." unique_id=2062145493]
+script = ExtResource("11_jdkrg")
+
+[node name="AudioService" type="Node2D" parent="." unique_id=912171326]
+script = ExtResource("20_ivbv5")
+
+[node name="Audio_background_music" type="AudioStreamPlayer" parent="AudioService" unique_id=1927476364]
+stream = ExtResource("19_g8m8l")
+
+[node name="Audio_jump" type="AudioStreamPlayer" parent="AudioService" unique_id=1896195259]
+stream = ExtResource("20_em5vk")
+
+[node name="Audio_hurt" type="AudioStreamPlayer" parent="AudioService" unique_id=2002076568]
+stream = ExtResource("21_ivbv5")

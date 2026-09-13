@@ -1,5 +1,6 @@
+AudioStreamPlayer
+Node2D
 Label
 TextureRect
 Panel
 CanvasLayer
-Node2D

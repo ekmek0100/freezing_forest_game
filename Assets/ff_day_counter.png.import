@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b3u4h7vmdqikb"
-path="res://.godot/imported/Freezing Forest.icon.png-61ff4b2d914099194b31ac8adaf89638.ctex"
+uid="uid://6fu5a6yc6vrl"
+path="res://.godot/imported/ff_day_counter.png-a9785bb201b94cd1c23d7ce3b817b5ae.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Freezing Forest.icon.png"
-dest_files=["res://.godot/imported/Freezing Forest.icon.png-61ff4b2d914099194b31ac8adaf89638.ctex"]
+source_file="res://ff_day_counter.png"
+dest_files=["res://.godot/imported/ff_day_counter.png-a9785bb201b94cd1c23d7ce3b817b5ae.ctex"]
 
 [params]
 

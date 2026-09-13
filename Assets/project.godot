@@ -11,9 +11,14 @@ config_version=5
 [application]
 
 config/name="Freezing Forest"
+config/version="v0.2 alpha dev 1.1"
 run/main_scene="uid://352xqdlfh2qi"
 config/features=PackedStringArray("4.7", "GL Compatibility")
-config/icon="res://icon.svg"
+config/icon="uid://coiqpl6gffti2"
+
+[autoload]
+
+GlobalVariables="*uid://dqqmx75pevtsg"
 
 [display]
 

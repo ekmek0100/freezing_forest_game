@@ -1,15 +1,18 @@
 extends Node2D
-var left_blocks = 1
+var left_blocks = GlobalVariables.remain_blocks_inv 
 @export var grid_size: int = 16
 @export var block_scale: float = 2.5
-
 var block_texture = load("res://ff_game_main_soil_with_snow.png")#images here
 
 func _unhandled_input(event):
-	print(left_blocks)
-	if event is InputEventMouseButton and event.pressed and left_blocks >= 1 and event.button_index == MOUSE_BUTTON_LEFT:
+	if GlobalVariables.remain_blocks_inv >= 32:
+		GlobalVariables.remain_blocks_inv = 32
+		GlobalVariables.is_blocks_reached_limit = true
+	else:
+		GlobalVariables.is_blocks_reached_limit = false
+	if event is InputEventMouseButton and event.pressed and GlobalVariables.remain_blocks_inv  >= 1 and event.button_index == MOUSE_BUTTON_LEFT:
 		var mouse_pos = get_global_mouse_position()
-		left_blocks -= 1
+		GlobalVariables.remain_blocks_inv -= 1
 		var snapped_pos = Vector2(
 			floor(mouse_pos.x / grid_size) * grid_size,
 			floor(mouse_pos.y / grid_size) * grid_size
@@ -38,7 +41,7 @@ func place_block(pos: Vector2):
 		new_block.input_event.connect(func(_viewport, event, _shape_idx):
 			if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_RIGHT:
 				new_block.queue_free()
-				left_blocks =+ 1
+				GlobalVariables.remain_blocks_inv += 1
 		)
 		
 		get_parent().add_child(new_block)
