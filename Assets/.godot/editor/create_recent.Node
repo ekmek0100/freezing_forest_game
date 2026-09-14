@@ -1,0 +1,7 @@
+TextureRect
+Label
+Panel
+CanvasLayer
+Node2D
+GPUParticles2D
+AudioStreamPlayer
