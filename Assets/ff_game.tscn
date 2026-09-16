@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://bhwctx07myj76" path="res://ff_game_snow(ts just white xd).png" id="6_ivbv5"]
 [ext_resource type="Script" uid="uid://canwcady80olv" path="res://gpu_particles_2d.gd" id="7_njhd6"]
 [ext_resource type="Texture2D" uid="uid://f5hga1nb77n" path="res://ff_main_cloud.png" id="7_uoytw"]
+[ext_resource type="Texture2D" uid="uid://cipf8yp41ca1q" path="res://ff_decors_tree.png" id="8_j74cg"]
 [ext_resource type="Script" uid="uid://csttlmuismfvy" path="res://area_2d.gd" id="8_k7uf1"]
 [ext_resource type="Texture2D" uid="uid://c70r0066jsfx4" path="res://ff_game_ui_remain_blocks.png" id="9_wjehf"]
 [ext_resource type="Script" uid="uid://bbypbp756dcfe" path="res://blocks_remain_ui.gd" id="10_jdkrg"]
@@ -23,9 +24,7 @@
 [ext_resource type="AudioStream" uid="uid://bucol4g13pch5" path="res://ff_music_sorry_i_used_ai.mp3" id="19_g8m8l"]
 [ext_resource type="AudioStream" uid="uid://bxdtiktn6yasd" path="res://ff_sounds_jump.wav" id="20_em5vk"]
 [ext_resource type="Script" uid="uid://4r7o06glhuq5" path="res://audio_service.gd" id="20_ivbv5"]
-[ext_resource type="Texture2D" uid="uid://cqv0lbgwf44rt" path="res://ff_froze_lvl.png" id="21_hvv5g"]
 [ext_resource type="AudioStream" uid="uid://bmo8txuw3cxbd" path="res://ff_sounds_hurt.wav" id="21_ivbv5"]
-[ext_resource type="Script" uid="uid://d0tjeugwyv451" path="res://froze_level.gd" id="22_jfnqf"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_k7uf1"]
 atlas = ExtResource("1_gmr8q")
@@ -171,10 +170,6 @@ font_size = 24
 font = ExtResource("5_dqxbp")
 font_size = 24
 
-[sub_resource type="LabelSettings" id="LabelSettings_njhd6"]
-font = ExtResource("5_dqxbp")
-font_color = Color(0, 0, 0, 1)
-
 [node name="FF_game" type="Node2D" unique_id=888231809]
 metadata/_edit_vertical_guides_ = [-454.0]
 
@@ -195,6 +190,8 @@ shape = SubResource("RectangleShape2D_nngf1")
 
 [node name="camera(follows sticky)" type="Camera2D" parent="sticky" unique_id=293725474]
 position = Vector2(-8, 32)
+limit_enabled = false
+position_smoothing_enabled = true
 
 [node name="sloomba" type="CharacterBody2D" parent="." unique_id=594966876]
 visible = false
@@ -221,6 +218,11 @@ position = Vector2(19, -209)
 texture = ExtResource("6_ivbv5")
 process_material = SubResource("ParticleProcessMaterial_xnwbw")
 script = ExtResource("7_njhd6")
+
+[node name="FfDecorsTree" type="Sprite2D" parent="decors" unique_id=1557098536]
+position = Vector2(-381.62497, 35.87501)
+scale = Vector2(6.335937, 7.804687)
+texture = ExtResource("8_j74cg")
 
 [node name="blocks" type="Node2D" parent="." unique_id=1561714080]
 position = Vector2(102, 196)
@@ -427,10 +429,10 @@ rotation = 0.017453292
 skew = 0.017453292
 
 [node name="text2" type="TextEdit" parent="texts" unique_id=1877240515]
-offset_left = -132.0
-offset_top = -106.0
-offset_right = 135.0
-offset_bottom = -24.0
+offset_left = -139.70758
+offset_top = -105.62612
+offset_right = 127.29242
+offset_bottom = -23.626122
 theme_override_fonts/font = ExtResource("5_dqxbp")
 text = "I will teach you to place blocks in this game:
 left click: place block right click: break block
@@ -619,31 +621,15 @@ text = "100"
 label_settings = SubResource("LabelSettings_o34q6")
 metadata/_edit_use_anchors_ = true
 
-[node name="ui_froze_level" type="Node2D" parent="all inferances" unique_id=1163060756]
+[node name="ui_inventory" type="Node2D" parent="all inferances" unique_id=1163060756]
 
-[node name="ui_pinner_froze_lvl" type="CanvasLayer" parent="all inferances/ui_froze_level" unique_id=1648188058]
+[node name="ui_pinner_inventory" type="CanvasLayer" parent="all inferances/ui_inventory" unique_id=1648188058]
 
-[node name="basur_salahi" type="Panel" parent="all inferances/ui_froze_level/ui_pinner_froze_lvl" unique_id=1015048682]
-offset_left = 561.0
-offset_top = 549.0
-offset_right = 624.0
-offset_bottom = 610.0
-
-[node name="ui_froze_lvl_theme" type="TextureRect" parent="all inferances/ui_froze_level/ui_pinner_froze_lvl/basur_salahi" unique_id=16883506]
-layout_mode = 0
-offset_top = 2.0
-offset_right = 55.0
-offset_bottom = 57.0
-texture = ExtResource("21_hvv5g")
-
-[node name="froze_level" type="Label" parent="all inferances/ui_froze_level/ui_pinner_froze_lvl/basur_salahi/ui_froze_lvl_theme" unique_id=278374321]
-layout_mode = 0
-offset_left = 19.0
-offset_top = 39.0
-offset_right = 39.0
-offset_bottom = 62.0
-label_settings = SubResource("LabelSettings_njhd6")
-script = ExtResource("22_jfnqf")
+[node name="ui_inventory_panel" type="Panel" parent="all inferances/ui_inventory/ui_pinner_inventory" unique_id=1015048682]
+offset_left = 501.0
+offset_top = 500.0
+offset_right = 609.0
+offset_bottom = 608.0
 
 [node name="global_variables" type="Node2D" parent="." unique_id=2062145493]
 position = Vector2(-77, 13)
