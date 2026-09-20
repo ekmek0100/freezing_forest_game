@@ -1,9 +1,9 @@
+Panel
+TextureRect
 CollisionShape2D
 Sprite2D
 Parallax2D
-TextureRect
 Label
-Panel
 CanvasLayer
 Node2D
 GPUParticles2D

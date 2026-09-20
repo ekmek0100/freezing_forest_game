@@ -586,14 +586,21 @@ position = Vector2(-30, -4)
 [node name="ui_pinner_health" type="CanvasLayer" parent="all inferances/ui_health" unique_id=2098671589]
 
 [node name="ui_health_panel" type="Panel" parent="all inferances/ui_health/ui_pinner_health" unique_id=939585947]
-offset_left = 483.0
-offset_top = 613.0
-offset_right = 649.0
-offset_bottom = 647.0
+z_index = 3
+offset_left = 511.0
+offset_top = 607.0
+offset_right = 677.0
+offset_bottom = 641.0
 metadata/_edit_use_anchors_ = true
 
 [node name="ui_therem_health" type="TextureRect" parent="all inferances/ui_health/ui_pinner_health/ui_health_panel" unique_id=891738749]
-layout_mode = 0
+z_index = 5
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.018072288
+anchor_top = -0.05882353
+anchor_right = -0.018072288
+anchor_bottom = -0.05882353
 offset_left = 7.0
 offset_top = -49.0
 offset_right = 161.0
@@ -602,7 +609,11 @@ texture = ExtResource("16_8ha4c")
 metadata/_edit_use_anchors_ = true
 
 [node name="ui_health_info" type="Label" parent="all inferances/ui_health/ui_pinner_health/ui_health_panel/ui_therem_health" unique_id=1931700778]
-layout_mode = 0
+z_index = 3
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.038961038
+anchor_right = -0.038961038
 offset_left = 33.0
 offset_top = 56.0
 offset_right = 73.0
@@ -612,7 +623,13 @@ script = ExtResource("17_75cho")
 metadata/_edit_use_anchors_ = true
 
 [node name="info" type="Label" parent="all inferances/ui_health/ui_pinner_health/ui_health_panel/ui_therem_health" unique_id=1519618547]
-layout_mode = 0
+z_index = 3
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0064935065
+anchor_top = -0.015267176
+anchor_right = 0.0064935065
+anchor_bottom = -0.015267176
 offset_left = 89.0
 offset_top = 57.0
 offset_right = 129.0
@@ -620,16 +637,6 @@ offset_bottom = 85.0
 text = "100"
 label_settings = SubResource("LabelSettings_o34q6")
 metadata/_edit_use_anchors_ = true
-
-[node name="ui_inventory" type="Node2D" parent="all inferances" unique_id=1163060756]
-
-[node name="ui_pinner_inventory" type="CanvasLayer" parent="all inferances/ui_inventory" unique_id=1648188058]
-
-[node name="ui_inventory_panel" type="Panel" parent="all inferances/ui_inventory/ui_pinner_inventory" unique_id=1015048682]
-offset_left = 501.0
-offset_top = 500.0
-offset_right = 609.0
-offset_bottom = 608.0
 
 [node name="global_variables" type="Node2D" parent="." unique_id=2062145493]
 position = Vector2(-77, 13)
