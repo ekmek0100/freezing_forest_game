@@ -1,7 +1,7 @@
-#animation code st0arts
+#animation code starts
 extends AnimatedSprite2D
 var timer = 0
-var days = 2
+var days = GlobalVariables.timer_days
 var is_animation_enabled
 var key = InputEvent
 #----------------------------------------------------------------------------------------------------------------------------------------#

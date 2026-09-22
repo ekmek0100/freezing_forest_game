@@ -1,6 +1,6 @@
+CollisionShape2D
 Panel
 TextureRect
-CollisionShape2D
 Sprite2D
 Parallax2D
 Label

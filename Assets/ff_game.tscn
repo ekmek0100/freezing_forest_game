@@ -26,90 +26,50 @@
 [ext_resource type="Script" uid="uid://4r7o06glhuq5" path="res://audio_service.gd" id="20_ivbv5"]
 [ext_resource type="AudioStream" uid="uid://bmo8txuw3cxbd" path="res://ff_sounds_hurt.wav" id="21_ivbv5"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_k7uf1"]
-atlas = ExtResource("1_gmr8q")
-region = Rect2(32, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_cfd4c"]
-atlas = ExtResource("1_gmr8q")
-region = Rect2(32, 64, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_wjehf"]
-atlas = ExtResource("1_gmr8q")
-region = Rect2(64, 64, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_uoytw"]
-atlas = ExtResource("1_gmr8q")
-region = Rect2(32, 32, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_xj2is"]
-atlas = ExtResource("1_gmr8q")
-region = Rect2(0, 64, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_a5cin"]
-atlas = ExtResource("1_gmr8q")
-region = Rect2(64, 32, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_eik0o"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_j74cg"]
 atlas = ExtResource("1_gmr8q")
 region = Rect2(0, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_jdkrg"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_jfnqf"]
 atlas = ExtResource("1_gmr8q")
 region = Rect2(64, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_umwjq"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_u6lxq"]
 atlas = ExtResource("1_gmr8q")
 region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c5rt6"]
+atlas = ExtResource("1_gmr8q")
+region = Rect2(64, 96, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_nngf1"]
 resource_local_to_scene = true
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_k7uf1")
+"texture": SubResource("AtlasTexture_j74cg")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_cfd4c")
+"texture": SubResource("AtlasTexture_jfnqf")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_wjehf")
+"texture": SubResource("AtlasTexture_u6lxq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c5rt6")
 }],
 "loop": 1,
-"name": &"idle_sticky_day2",
-"speed": 0.8
+"name": &"ff_1st_day_idle",
+"speed": 5.0
 }, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_uoytw")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_xj2is")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_a5cin")
-}],
+"frames": [],
 "loop": 1,
-"name": &"idle_sticky_day4+",
-"speed": 0.8
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_eik0o")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_jdkrg")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_umwjq")
-}],
-"loop": 1,
-"name": &"idle_sticky_first_day",
-"speed": 0.8
+"name": &"ff_1st_day_jump",
+"speed": 5.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nngf1"]
-size = Vector2(71, 165.5)
+size = Vector2(105.375, 221.6875)
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_xnwbw"]
 particle_flag_disable_z = true
@@ -129,8 +89,6 @@ load_path = "res://.godot/imported/ff_game_main_soil_with_snow.png-bdbaaf4f4bb8d
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xnwbw"]
 size = Vector2(245632, 7892)
-
-[sub_resource type="Theme" id="Theme_xnwbw"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_xnwbw"]
 font = ExtResource("5_dqxbp")
@@ -177,21 +135,26 @@ metadata/_edit_vertical_guides_ = [-454.0]
 script = ExtResource("2_tj75n")
 
 [node name="animations(animation code inside)" type="AnimatedSprite2D" parent="sticky" unique_id=1094604779]
-position = Vector2(128, 63)
-scale = Vector2(4.75, 4.9375)
+position = Vector2(103.00001, 36.500004)
+scale = Vector2(6.3125005, 6.59375)
 sprite_frames = SubResource("SpriteFrames_nngf1")
-animation = &"idle_sticky_day4+"
-frame_progress = 0.26763675
+animation = &"ff_1st_day_jump"
 script = ExtResource("4_dqxbp")
 
 [node name="hitbox" type="CollisionShape2D" parent="sticky" unique_id=785440428]
-position = Vector2(120, 66)
+position = Vector2(58, 37)
 shape = SubResource("RectangleShape2D_nngf1")
 
 [node name="camera(follows sticky)" type="Camera2D" parent="sticky" unique_id=293725474]
 position = Vector2(-8, 32)
 limit_enabled = false
 position_smoothing_enabled = true
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="sticky" unique_id=492302123]
+position = Vector2(-555, -265)
+texture = ExtResource("6_ivbv5")
+process_material = SubResource("ParticleProcessMaterial_xnwbw")
+script = ExtResource("7_njhd6")
 
 [node name="sloomba" type="CharacterBody2D" parent="." unique_id=594966876]
 visible = false
@@ -204,38 +167,42 @@ texture = ExtResource("6_a5cin")
 [node name="decors" type="Node2D" parent="." unique_id=1376685568]
 
 [node name="cloud2" type="Sprite2D" parent="decors" unique_id=823135230]
-position = Vector2(-140, -141)
-scale = Vector2(3.78125, 2.78125)
+position = Vector2(-153.75, -113.75)
+scale = Vector2(6.2656245, 4.578125)
 texture = ExtResource("7_uoytw")
 
 [node name="cloud1" type="Sprite2D" parent="decors" unique_id=39331933]
-position = Vector2(226.00003, -172)
-scale = Vector2(3.78125, 2.78125)
+position = Vector2(347, -177)
+scale = Vector2(7.265625, 4.546875)
 texture = ExtResource("7_uoytw")
 
-[node name="GPUParticles2D" type="GPUParticles2D" parent="decors" unique_id=492302123]
-position = Vector2(19, -209)
-texture = ExtResource("6_ivbv5")
-process_material = SubResource("ParticleProcessMaterial_xnwbw")
-script = ExtResource("7_njhd6")
+[node name="cloud3" type="Sprite2D" parent="decors" unique_id=1469310599]
+position = Vector2(-414.125, -185.625)
+scale = Vector2(5.6796875, 4.6484375)
+texture = ExtResource("7_uoytw")
+
+[node name="cloud4" type="Sprite2D" parent="decors" unique_id=296470325]
+position = Vector2(120.37494, -264.625)
+scale = Vector2(7.5859346, 4.5859375)
+texture = ExtResource("7_uoytw")
 
 [node name="FfDecorsTree" type="Sprite2D" parent="decors" unique_id=1557098536]
-position = Vector2(-381.62497, 35.87501)
-scale = Vector2(6.335937, 7.804687)
+position = Vector2(-382.99997, 21)
+scale = Vector2(8.4375, 8.992188)
 texture = ExtResource("8_j74cg")
 
-[node name="blocks" type="Node2D" parent="." unique_id=1561714080]
+[node name="blocks_(unbreakable)" type="Node2D" parent="." unique_id=1561714080]
 position = Vector2(102, 196)
 script = ExtResource("5_a5cin")
 
-[node name="block_collision" type="StaticBody2D" parent="blocks" unique_id=1895265160]
+[node name="block_collision" type="StaticBody2D" parent="blocks_(unbreakable)" unique_id=1895265160]
 
-[node name="block_hitbox" type="CollisionShape2D" parent="blocks/block_collision" unique_id=201628239]
+[node name="block_hitbox" type="CollisionShape2D" parent="blocks_(unbreakable)/block_collision" unique_id=201628239]
 position = Vector2(6, 2)
 shape = SubResource("RectangleShape2D_gwu7r")
 metadata/_edit_group_ = true
 
-[node name="block_texture" type="TextureRect" parent="blocks/block_collision/block_hitbox" unique_id=1894904818]
+[node name="block_texture" type="TextureRect" parent="blocks_(unbreakable)/block_collision/block_hitbox" unique_id=1894904818]
 offset_left = -20.0
 offset_top = -20.0
 offset_right = 20.0
@@ -243,12 +210,12 @@ offset_bottom = 20.0
 texture = SubResource("CompressedTexture2D_wjehf")
 metadata/_edit_use_anchors_ = true
 
-[node name="block_hitbox2" type="CollisionShape2D" parent="blocks/block_collision" unique_id=1473107616]
+[node name="block_hitbox2" type="CollisionShape2D" parent="blocks_(unbreakable)/block_collision" unique_id=1473107616]
 position = Vector2(46, 2)
 shape = SubResource("RectangleShape2D_gwu7r")
 metadata/_edit_group_ = true
 
-[node name="block_texture" type="TextureRect" parent="blocks/block_collision/block_hitbox2" unique_id=1291982940]
+[node name="block_texture" type="TextureRect" parent="blocks_(unbreakable)/block_collision/block_hitbox2" unique_id=1291982940]
 offset_left = -20.0
 offset_top = -20.0
 offset_right = 20.0
@@ -256,12 +223,12 @@ offset_bottom = 20.0
 texture = SubResource("CompressedTexture2D_wjehf")
 metadata/_edit_use_anchors_ = true
 
-[node name="block_hitbox3" type="CollisionShape2D" parent="blocks/block_collision" unique_id=179508220]
+[node name="block_hitbox3" type="CollisionShape2D" parent="blocks_(unbreakable)/block_collision" unique_id=179508220]
 position = Vector2(86, 2)
 shape = SubResource("RectangleShape2D_gwu7r")
 metadata/_edit_group_ = true
 
-[node name="block_texture" type="TextureRect" parent="blocks/block_collision/block_hitbox3" unique_id=275748569]
+[node name="block_texture" type="TextureRect" parent="blocks_(unbreakable)/block_collision/block_hitbox3" unique_id=275748569]
 offset_left = -20.0
 offset_top = -20.0
 offset_right = 20.0
@@ -269,12 +236,12 @@ offset_bottom = 20.0
 texture = SubResource("CompressedTexture2D_wjehf")
 metadata/_edit_use_anchors_ = true
 
-[node name="block_hitbox4" type="CollisionShape2D" parent="blocks/block_collision" unique_id=910226977]
+[node name="block_hitbox4" type="CollisionShape2D" parent="blocks_(unbreakable)/block_collision" unique_id=910226977]
 position = Vector2(-31, 2)
 shape = SubResource("RectangleShape2D_gwu7r")
 metadata/_edit_group_ = true
 
-[node name="block_texture" type="TextureRect" parent="blocks/block_collision/block_hitbox4" unique_id=225514839]
+[node name="block_texture" type="TextureRect" parent="blocks_(unbreakable)/block_collision/block_hitbox4" unique_id=225514839]
 offset_left = -20.0
 offset_top = -20.0
 offset_right = 20.0
@@ -282,12 +249,12 @@ offset_bottom = 20.0
 texture = SubResource("CompressedTexture2D_wjehf")
 metadata/_edit_use_anchors_ = true
 
-[node name="block_hitbox5" type="CollisionShape2D" parent="blocks/block_collision" unique_id=102440492]
+[node name="block_hitbox5" type="CollisionShape2D" parent="blocks_(unbreakable)/block_collision" unique_id=102440492]
 position = Vector2(-68, 2)
 shape = SubResource("RectangleShape2D_gwu7r")
 metadata/_edit_group_ = true
 
-[node name="block_texture" type="TextureRect" parent="blocks/block_collision/block_hitbox5" unique_id=1307564998]
+[node name="block_texture" type="TextureRect" parent="blocks_(unbreakable)/block_collision/block_hitbox5" unique_id=1307564998]
 offset_left = -20.0
 offset_top = -20.0
 offset_right = 20.0
@@ -295,12 +262,12 @@ offset_bottom = 20.0
 texture = SubResource("CompressedTexture2D_wjehf")
 metadata/_edit_use_anchors_ = true
 
-[node name="block_hitbox6" type="CollisionShape2D" parent="blocks/block_collision" unique_id=1790774193]
+[node name="block_hitbox6" type="CollisionShape2D" parent="blocks_(unbreakable)/block_collision" unique_id=1790774193]
 position = Vector2(-100, 2)
 shape = SubResource("RectangleShape2D_gwu7r")
 metadata/_edit_group_ = true
 
-[node name="block_texture" type="TextureRect" parent="blocks/block_collision/block_hitbox6" unique_id=2031218246]
+[node name="block_texture" type="TextureRect" parent="blocks_(unbreakable)/block_collision/block_hitbox6" unique_id=2031218246]
 offset_left = -20.0
 offset_top = -20.0
 offset_right = 20.0
@@ -308,12 +275,12 @@ offset_bottom = 20.0
 texture = SubResource("CompressedTexture2D_wjehf")
 metadata/_edit_use_anchors_ = true
 
-[node name="block_hitbox7" type="CollisionShape2D" parent="blocks/block_collision" unique_id=810843793]
+[node name="block_hitbox7" type="CollisionShape2D" parent="blocks_(unbreakable)/block_collision" unique_id=810843793]
 position = Vector2(-128, 2)
 shape = SubResource("RectangleShape2D_gwu7r")
 metadata/_edit_group_ = true
 
-[node name="block_texture" type="TextureRect" parent="blocks/block_collision/block_hitbox7" unique_id=839578959]
+[node name="block_texture" type="TextureRect" parent="blocks_(unbreakable)/block_collision/block_hitbox7" unique_id=839578959]
 offset_left = -20.0
 offset_top = -20.0
 offset_right = 20.0
@@ -321,12 +288,12 @@ offset_bottom = 20.0
 texture = SubResource("CompressedTexture2D_wjehf")
 metadata/_edit_use_anchors_ = true
 
-[node name="block_hitbox8" type="CollisionShape2D" parent="blocks/block_collision" unique_id=18675663]
+[node name="block_hitbox8" type="CollisionShape2D" parent="blocks_(unbreakable)/block_collision" unique_id=18675663]
 position = Vector2(-164, 2)
 shape = SubResource("RectangleShape2D_gwu7r")
 metadata/_edit_group_ = true
 
-[node name="block_texture" type="TextureRect" parent="blocks/block_collision/block_hitbox8" unique_id=858278944]
+[node name="block_texture" type="TextureRect" parent="blocks_(unbreakable)/block_collision/block_hitbox8" unique_id=858278944]
 offset_left = -20.0
 offset_top = -20.0
 offset_right = 20.0
@@ -334,12 +301,12 @@ offset_bottom = 20.0
 texture = SubResource("CompressedTexture2D_wjehf")
 metadata/_edit_use_anchors_ = true
 
-[node name="block_hitbox9" type="CollisionShape2D" parent="blocks/block_collision" unique_id=1908057564]
+[node name="block_hitbox9" type="CollisionShape2D" parent="blocks_(unbreakable)/block_collision" unique_id=1908057564]
 position = Vector2(-200, 2)
 shape = SubResource("RectangleShape2D_gwu7r")
 metadata/_edit_group_ = true
 
-[node name="block_texture" type="TextureRect" parent="blocks/block_collision/block_hitbox9" unique_id=532386810]
+[node name="block_texture" type="TextureRect" parent="blocks_(unbreakable)/block_collision/block_hitbox9" unique_id=532386810]
 offset_left = -20.0
 offset_top = -20.0
 offset_right = 20.0
@@ -347,12 +314,12 @@ offset_bottom = 20.0
 texture = SubResource("CompressedTexture2D_wjehf")
 metadata/_edit_use_anchors_ = true
 
-[node name="block_hitbox10" type="CollisionShape2D" parent="blocks/block_collision" unique_id=232686464]
+[node name="block_hitbox10" type="CollisionShape2D" parent="blocks_(unbreakable)/block_collision" unique_id=232686464]
 position = Vector2(-427, -30)
 shape = SubResource("RectangleShape2D_gwu7r")
 metadata/_edit_group_ = true
 
-[node name="block_texture" type="TextureRect" parent="blocks/block_collision/block_hitbox10" unique_id=1764075514]
+[node name="block_texture" type="TextureRect" parent="blocks_(unbreakable)/block_collision/block_hitbox10" unique_id=1764075514]
 offset_left = -20.0
 offset_top = -20.0
 offset_right = 20.0
@@ -360,12 +327,12 @@ offset_bottom = 20.0
 texture = SubResource("CompressedTexture2D_wjehf")
 metadata/_edit_use_anchors_ = true
 
-[node name="block_hitbox12" type="CollisionShape2D" parent="blocks/block_collision" unique_id=1656707350]
+[node name="block_hitbox12" type="CollisionShape2D" parent="blocks_(unbreakable)/block_collision" unique_id=1656707350]
 position = Vector2(-569, -30)
 shape = SubResource("RectangleShape2D_gwu7r")
 metadata/_edit_group_ = true
 
-[node name="block_texture" type="TextureRect" parent="blocks/block_collision/block_hitbox12" unique_id=1494718970]
+[node name="block_texture" type="TextureRect" parent="blocks_(unbreakable)/block_collision/block_hitbox12" unique_id=1494718970]
 offset_left = -20.0
 offset_top = -20.0
 offset_right = 20.0
@@ -373,12 +340,12 @@ offset_bottom = 20.0
 texture = SubResource("CompressedTexture2D_wjehf")
 metadata/_edit_use_anchors_ = true
 
-[node name="block_hitbox13" type="CollisionShape2D" parent="blocks/block_collision" unique_id=1209993749]
+[node name="block_hitbox13" type="CollisionShape2D" parent="blocks_(unbreakable)/block_collision" unique_id=1209993749]
 position = Vector2(-498, -30)
 shape = SubResource("RectangleShape2D_gwu7r")
 metadata/_edit_group_ = true
 
-[node name="block_texture" type="TextureRect" parent="blocks/block_collision/block_hitbox13" unique_id=710278724]
+[node name="block_texture" type="TextureRect" parent="blocks_(unbreakable)/block_collision/block_hitbox13" unique_id=710278724]
 offset_left = -20.0
 offset_top = -20.0
 offset_right = 20.0
@@ -386,12 +353,12 @@ offset_bottom = 20.0
 texture = SubResource("CompressedTexture2D_wjehf")
 metadata/_edit_use_anchors_ = true
 
-[node name="block_hitbox14" type="CollisionShape2D" parent="blocks/block_collision" unique_id=1401771134]
+[node name="block_hitbox14" type="CollisionShape2D" parent="blocks_(unbreakable)/block_collision" unique_id=1401771134]
 position = Vector2(-530, -30)
 shape = SubResource("RectangleShape2D_gwu7r")
 metadata/_edit_group_ = true
 
-[node name="block_texture" type="TextureRect" parent="blocks/block_collision/block_hitbox14" unique_id=858219887]
+[node name="block_texture" type="TextureRect" parent="blocks_(unbreakable)/block_collision/block_hitbox14" unique_id=858219887]
 offset_left = -20.0
 offset_top = -20.0
 offset_right = 20.0
@@ -399,12 +366,12 @@ offset_bottom = 20.0
 texture = SubResource("CompressedTexture2D_wjehf")
 metadata/_edit_use_anchors_ = true
 
-[node name="block_hitbox11" type="CollisionShape2D" parent="blocks/block_collision" unique_id=1575832300]
+[node name="block_hitbox11" type="CollisionShape2D" parent="blocks_(unbreakable)/block_collision" unique_id=1575832300]
 position = Vector2(-467, -30)
 shape = SubResource("RectangleShape2D_gwu7r")
 metadata/_edit_group_ = true
 
-[node name="block_texture" type="TextureRect" parent="blocks/block_collision/block_hitbox11" unique_id=1118658736]
+[node name="block_texture" type="TextureRect" parent="blocks_(unbreakable)/block_collision/block_hitbox11" unique_id=1118658736]
 offset_left = -20.0
 offset_top = -20.0
 offset_right = 20.0
@@ -420,39 +387,12 @@ script = ExtResource("8_k7uf1")
 position = Vector2(8989, 10005)
 shape = SubResource("RectangleShape2D_xnwbw")
 
+[node name="hitbox2" type="CollisionShape2D" parent="dying area" unique_id=604692860]
+position = Vector2(3104, -56299)
+shape = SubResource("RectangleShape2D_xnwbw")
+
 [node name="Audio_hurt2" type="AudioStreamPlayer" parent="dying area" unique_id=1247454474]
 stream = ExtResource("21_ivbv5")
-
-[node name="texts" type="Node2D" parent="." unique_id=502031065]
-position = Vector2(-30.999996, -35.999996)
-rotation = 0.017453292
-skew = 0.017453292
-
-[node name="text2" type="TextEdit" parent="texts" unique_id=1877240515]
-offset_left = -139.70758
-offset_top = -105.62612
-offset_right = 127.29242
-offset_bottom = -23.626122
-theme_override_fonts/font = ExtResource("5_dqxbp")
-text = "I will teach you to place blocks in this game:
-left click: place block right click: break block
-There are no Forest right now sorry :(
-This text box interactive!"
-metadata/_edit_use_anchors_ = true
-
-[node name="text" type="TextEdit" parent="texts" unique_id=2026787404]
-anchors_preset = -1
-offset_left = 207.0
-offset_top = -62.0
-offset_right = 317.0
-offset_bottom = 6.0
-theme = SubResource("Theme_xnwbw")
-theme_override_fonts/font = ExtResource("5_dqxbp")
-text = "Welcome to 
-Freezing Forest!
-(v0.2 Alpha Dev 1.1)"
-scroll_smooth = true
-metadata/_edit_use_anchors_ = true
 
 [node name="all inferances" type="Node2D" parent="." unique_id=293827888]
 position = Vector2(-196, -117)
@@ -612,8 +552,8 @@ metadata/_edit_use_anchors_ = true
 z_index = 3
 layout_mode = 1
 anchors_preset = -1
-anchor_left = -0.038961038
-anchor_right = -0.038961038
+anchor_left = 0.0064935065
+anchor_right = 0.0064935065
 offset_left = 33.0
 offset_top = 56.0
 offset_right = 73.0
@@ -643,7 +583,7 @@ position = Vector2(-77, 13)
 script = ExtResource("11_jdkrg")
 
 [node name="AudioService" type="Node2D" parent="." unique_id=912171326]
-position = Vector2(37, 64)
+position = Vector2(133, 60)
 script = ExtResource("20_ivbv5")
 
 [node name="Audio_background_music" type="AudioStreamPlayer" parent="AudioService" unique_id=1927476364]
