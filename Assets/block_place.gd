@@ -1,7 +1,8 @@
 extends Node2D
 var left_blocks = GlobalVariables.remain_blocks_inv 
 @export var grid_size: int = 64
-@export var block_scale: float = 1
+@export var block_scale: float = 0.9
+
 
 var block_texture = load("res://ff_game_main_soil_with_snow.png")#images here
 

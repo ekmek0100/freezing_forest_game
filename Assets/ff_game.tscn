@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://352xqdlfh2qi"]
 
-[ext_resource type="Texture2D" uid="uid://ceefff1sk02ti" path="res://ff_game_main_sticky.png" id="1_gmr8q"]
+[ext_resource type="Texture2D" uid="uid://7fljm8pkrlbf" path="res://ff_main_sticky_another_animations.png" id="2_2k5c5"]
+[ext_resource type="Texture2D" uid="uid://ceefff1sk02ti" path="res://ff_game_main_sticky.png" id="2_j74cg"]
 [ext_resource type="Script" uid="uid://bstqsp6inve2c" path="res://sticky.gd" id="2_tj75n"]
 [ext_resource type="Script" uid="uid://cy8it85eqapyc" path="res://animations.gd" id="4_dqxbp"]
 [ext_resource type="Script" uid="uid://p1fysjcxkeod" path="res://block_place.gd" id="5_a5cin"]
@@ -25,51 +26,113 @@
 [ext_resource type="AudioStream" uid="uid://bxdtiktn6yasd" path="res://ff_sounds_jump.wav" id="20_em5vk"]
 [ext_resource type="Script" uid="uid://4r7o06glhuq5" path="res://audio_service.gd" id="20_ivbv5"]
 [ext_resource type="AudioStream" uid="uid://bmo8txuw3cxbd" path="res://ff_sounds_hurt.wav" id="21_ivbv5"]
+[ext_resource type="Texture2D" uid="uid://bm7fjaj51dfl2" path="res://ff_assets_door.png" id="27_2k5c5"]
+[ext_resource type="Texture2D" uid="uid://bn1urs7fkebr1" path="res://ff_main_textbox.png" id="28_u6lxq"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_j74cg"]
-atlas = ExtResource("1_gmr8q")
-region = Rect2(0, 0, 32, 32)
+[sub_resource type="AtlasTexture" id="AtlasTexture_gddm5"]
+atlas = ExtResource("2_2k5c5")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x8hgo"]
+atlas = ExtResource("2_j74cg")
+region = Rect2(0, 0, 21, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hvv5g"]
+atlas = ExtResource("2_j74cg")
+region = Rect2(0, 0, 21, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jfnqf"]
-atlas = ExtResource("1_gmr8q")
-region = Rect2(64, 0, 32, 32)
+atlas = ExtResource("2_j74cg")
+region = Rect2(0, 32, 21, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2k5c5"]
+atlas = ExtResource("2_j74cg")
+region = Rect2(63, 0, 21, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pusn8"]
+atlas = ExtResource("2_j74cg")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ofg56"]
+atlas = ExtResource("2_j74cg")
+region = Rect2(0, 96, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_u6lxq"]
-atlas = ExtResource("1_gmr8q")
-region = Rect2(0, 32, 32, 32)
+atlas = ExtResource("2_j74cg")
+region = Rect2(63, 0, 21, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_c5rt6"]
-atlas = ExtResource("1_gmr8q")
-region = Rect2(64, 96, 32, 32)
+[sub_resource type="AtlasTexture" id="AtlasTexture_j74cg"]
+atlas = ExtResource("2_j74cg")
+region = Rect2(0, 32, 21, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_nngf1"]
 resource_local_to_scene = true
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_j74cg")
+"texture": SubResource("AtlasTexture_gddm5")
+}],
+"loop": 1,
+"name": &"sticky_animation_ground_pound_day1",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x8hgo")
+}],
+"loop": 1,
+"name": &"sticky_animation_idle_day1",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hvv5g")
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_jfnqf")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_u6lxq")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_c5rt6")
+"texture": SubResource("AtlasTexture_2k5c5")
 }],
 "loop": 1,
-"name": &"ff_1st_day_idle",
+"name": &"sticky_animation_idle_wait_day1",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pusn8")
+}],
+"loop": 1,
+"name": &"sticky_animation_jump_left_day1",
 "speed": 5.0
 }, {
-"frames": [],
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ofg56")
+}],
 "loop": 1,
-"name": &"ff_1st_day_jump",
+"name": &"sticky_animation_jump_right_day1",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u6lxq")
+}],
+"loop": 1,
+"name": &"sticky_animation_walk_left_day1",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j74cg")
+}],
+"loop": 1,
+"name": &"sticky_animation_walk_right_day1",
 "speed": 5.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nngf1"]
-size = Vector2(105.375, 221.6875)
+size = Vector2(101.921875, 213.92188)
 
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_xnwbw"]
 particle_flag_disable_z = true
@@ -88,7 +151,7 @@ size = Vector2(29.328125, 22.25)
 load_path = "res://.godot/imported/ff_game_main_soil_with_snow.png-bdbaaf4f4bb8d2493a326a3f5890486d.ctex"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xnwbw"]
-size = Vector2(245632, 7892)
+size = Vector2(245632, 8359)
 
 [sub_resource type="LabelSettings" id="LabelSettings_xnwbw"]
 font = ExtResource("5_dqxbp")
@@ -128,6 +191,10 @@ font_size = 24
 font = ExtResource("5_dqxbp")
 font_size = 24
 
+[sub_resource type="LabelSettings" id="LabelSettings_rlltc"]
+font = ExtResource("5_dqxbp")
+font_size = 64
+
 [node name="FF_game" type="Node2D" unique_id=888231809]
 metadata/_edit_vertical_guides_ = [-454.0]
 
@@ -135,20 +202,21 @@ metadata/_edit_vertical_guides_ = [-454.0]
 script = ExtResource("2_tj75n")
 
 [node name="animations(animation code inside)" type="AnimatedSprite2D" parent="sticky" unique_id=1094604779]
-position = Vector2(103.00001, 36.500004)
-scale = Vector2(6.3125005, 6.59375)
+position = Vector2(20, -53)
+scale = Vector2(6.7142854, 6.6953125)
 sprite_frames = SubResource("SpriteFrames_nngf1")
-animation = &"ff_1st_day_jump"
+animation = &"sticky_animation_idle_day1"
+autoplay = "sticky_animation_idle_day1"
+centered = false
 script = ExtResource("4_dqxbp")
 
 [node name="hitbox" type="CollisionShape2D" parent="sticky" unique_id=785440428]
-position = Vector2(58, 37)
+position = Vector2(69.03906, 57.960938)
 shape = SubResource("RectangleShape2D_nngf1")
 
 [node name="camera(follows sticky)" type="Camera2D" parent="sticky" unique_id=293725474]
 position = Vector2(-8, 32)
 limit_enabled = false
-position_smoothing_enabled = true
 
 [node name="GPUParticles2D" type="GPUParticles2D" parent="sticky" unique_id=492302123]
 position = Vector2(-555, -265)
@@ -384,7 +452,7 @@ position = Vector2(52, 408)
 script = ExtResource("8_k7uf1")
 
 [node name="hitbox" type="CollisionShape2D" parent="dying area" unique_id=1958721983]
-position = Vector2(8989, 10005)
+position = Vector2(7391, 5294)
 shape = SubResource("RectangleShape2D_xnwbw")
 
 [node name="hitbox2" type="CollisionShape2D" parent="dying area" unique_id=604692860]
@@ -393,6 +461,9 @@ shape = SubResource("RectangleShape2D_xnwbw")
 
 [node name="Audio_hurt2" type="AudioStreamPlayer" parent="dying area" unique_id=1247454474]
 stream = ExtResource("21_ivbv5")
+volume_db = 4.626
+pitch_scale = 1.06
+mix_target = 1
 
 [node name="all inferances" type="Node2D" parent="." unique_id=293827888]
 position = Vector2(-196, -117)
@@ -594,3 +665,51 @@ stream = ExtResource("20_em5vk")
 
 [node name="Audio_hurt" type="AudioStreamPlayer" parent="AudioService" unique_id=2002076568]
 stream = ExtResource("21_ivbv5")
+
+[node name="level_the_house" type="Node2D" parent="." unique_id=1291813488]
+
+[node name="level_the_house_blocks" type="Node2D" parent="level_the_house" unique_id=98861625]
+
+[node name="hitboxes" type="Node2D" parent="level_the_house/level_the_house_blocks" unique_id=1749442295]
+
+[node name="spawn_points" type="Node2D" parent="." unique_id=1494676326]
+
+[node name="house_spawn" type="Marker2D" parent="spawn_points" unique_id=674557215]
+position = Vector2(-6761, 24076)
+
+[node name="spawn_point_game_start" type="Marker2D" parent="spawn_points" unique_id=1208660314]
+position = Vector2(68, 47)
+
+[node name="FfAssetsDoor" type="Sprite2D" parent="." unique_id=1967040596]
+position = Vector2(-6924.9995, 23853)
+scale = Vector2(12.74611, 13.91016)
+texture = ExtResource("27_2k5c5")
+
+[node name="messagebox" type="Node2D" parent="." unique_id=960078076]
+visible = false
+
+[node name="ui_pinner" type="CanvasLayer" parent="messagebox" unique_id=562368355]
+visible = false
+
+[node name="Panel" type="Panel" parent="messagebox/ui_pinner" unique_id=334581593]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="theme" type="TextureRect" parent="messagebox/ui_pinner/Panel" unique_id=458601564]
+z_index = 13
+layout_mode = 0
+offset_left = -347.0
+offset_top = -31.0
+offset_right = 367.0
+offset_bottom = 564.0
+texture = ExtResource("28_u6lxq")
+
+[node name="Label" type="Label" parent="messagebox/ui_pinner/Panel" unique_id=2104094067]
+z_index = 20
+layout_mode = 0
+offset_left = 95.0
+offset_top = 277.0
+offset_right = 359.0
+offset_bottom = 344.0
+text = "enter to exit"
+label_settings = SubResource("LabelSettings_rlltc")

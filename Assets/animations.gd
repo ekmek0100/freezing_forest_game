@@ -2,52 +2,38 @@
 extends AnimatedSprite2D
 var timer = 0
 var days = GlobalVariables.timer_days
-var is_animation_enabled
-var key = InputEvent
+var timer_animation
+var is_pressed_to_any_key
+
 #----------------------------------------------------------------------------------------------------------------------------------------#
 func _process(delta: float) -> void:
-	if key:
-			timer = 0
+	timer_animation == delta
+	if is_pressed_to_any_key == true:
+			timer_animation = 0 
 			stop()
-			is_animation_enabled = false
 			frame = 0
-	timer += delta
 #---------------------------------------------------------------------------------------------------------------(connected to delta btw)#
-	if timer >= 1.0 and days >= 4:
-		play("idle_sticky_day4+")
-		is_animation_enabled = true
-		
-	if timer > 1.0 and days == 2 and 3:
-		play("idle_sticky_day2")
-		is_animation_enabled = true
-		
-	if timer > 1.0 and days == 1:
-		play("idle_sticky_first_day")
-		is_animation_enabled = true
-		
-	#end of animation code
-	if days == 1 and not is_animation_enabled:
-		play("idle_sticky_first_day")
+	if Input.is_action_just_pressed("ui_left") or Input.is_action_just_pressed("Press_A") :
+		timer_animation = 0
+		is_pressed_to_any_key = true
+		play("sticky_animation_walk_left_day1")
+	if Input.is_action_just_pressed("ui_right") or Input.is_action_just_pressed("Press_D"):
+		is_pressed_to_any_key = true
+		timer_animation = 0 
+		play("sticky_animation_walk_right_day1")
+	if is_pressed_to_any_key == false and timer_animation == 1:
+		is_pressed_to_any_key = true
+		timer_animation = 0
+		play("sticky_animation_idle_day1")
+	if is_pressed_to_any_key == false and timer_animation == 5:
+		is_pressed_to_any_key = true
+		timer_animation = 0
+		play("sticky_animation_idle_wait_day1")
 		await get_tree().create_timer(0.5).timeout
-		frame = 0
-		stop()
-		
-	
-	if days == 2 and not is_animation_enabled:
-		play("idle_sticky_day2")
+	if Input.is_action_just_pressed("Press_S") or Input.is_action_just_pressed("ui_down"):
+		play("sticky_animation_ground_pound_day1")
 		await get_tree().create_timer(0.5).timeout
-		frame = 0
-	
-	
+		play("sticky_animation_idle_day1")
 		
-	if days == 3 and not is_animation_enabled:
-		play("idle_sticky_day2")
-		await get_tree().create_timer(0.5).timeout
-		frame = 0
-		stop()
-		
-	if days >= 4 and is_animation_enabled:
-		play("idle_sticky_day4+")
-		await get_tree().create_timer(0.5).timeout
-		frame = 0
-		stop()
+	else:
+		is_pressed_to_any_key = false

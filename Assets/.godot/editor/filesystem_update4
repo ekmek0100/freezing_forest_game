@@ -1,1 +1,4 @@
+res://sticky.gd
+res://global_variables.gd
 res://ff_game.tscn
+res://animations.gd
